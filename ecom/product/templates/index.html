@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table border="2">
+    <thead>
+    <th>Mid</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Qty</th>
+    <th>Brand</th>
+    <th>Warranty</th>
+    <th>Delivery</th>
+    <th>Actions</th>
+    </thead>
+
+
+    {% if all_products %}
+        {% for prod in all_products %}
+            <tbody>
+            <th>{{prod.pid}}</th>
+            <th>{{prod.name}}</th>
+            <th>{{prod.price}}</th>
+            <th>{{prod.qty}}</th>
+            <th>{{prod.brand}}</th>
+            <th>{{prod.warranty}}</th>
+            <th>{{prod.delivery}}</th>
+            <th><a href="/product/update/{{prod.pid}}">Edit</a>
+        <a href="/product/delete{{prod.pid}}">Delete</a></th>
+            </tbody>
+        {% endfor %}
+    {% endif %}
+</table>
+</body>
+</html>
